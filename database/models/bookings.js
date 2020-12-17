@@ -14,19 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   bookings.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      allowNull: false
-    },
+    id: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
     room_id: DataTypes.INTEGER,
     total_person: DataTypes.INTEGER,
-    booking_time: DataTypes.TIME,
+    booking_time: DataTypes.DATE,
     noted: DataTypes.STRING,
-    check_in_time: DataTypes.TIME,
-    check_out_time: DataTypes.TIME,
+    check_in_time: DataTypes.DATE,
+    check_out_time: DataTypes.DATE,
     created_at: DataTypes.TIME,
     updated_at: DataTypes.TIME,
     deleted_at: DataTypes.TIME
@@ -34,10 +29,5 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'bookings',
   });
-
-  bookings.associate = function(models){
-    bookings.belongsTo(models.users,{foreignKey:'user_id',as:'id'})
-  };
-
   return bookings;
 };

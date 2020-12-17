@@ -14,18 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   users.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      allowNull:false
-    },
+    id: DataTypes.INTEGER,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     photo: DataTypes.STRING,
-    created_at: DataTypes.TIME,
-    updated_at: DataTypes.TIME,
-    deleted_at: DataTypes.TIME
+    created_at: DataTypes.DATE,
+    updated_at: DataTypes.DATE,
+    deleted_at: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'users',

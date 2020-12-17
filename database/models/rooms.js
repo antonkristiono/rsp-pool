@@ -14,12 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   rooms.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      allowNull: false
-    },
+    id: DataTypes.INTEGER,
     room_name: DataTypes.STRING,
     room_capacity: DataTypes.STRING,
     photo: DataTypes.STRING,
