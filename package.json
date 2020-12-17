@@ -1,0 +1,26 @@
+{
+  "name": "rsp-pool",
+  "version": "1.0.0",
+  "description": "test refactory",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  },
+  "author": "Anton Kristiono",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mariadb": "^2.5.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "password-hash": "^1.2.2",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
