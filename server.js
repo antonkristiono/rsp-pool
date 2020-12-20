@@ -10,6 +10,13 @@ dotenv.config({ path: './config/config.env' });
 
 const app = express();
 
+//routes files
+const users= require('./routes/users');
+
+//mount rountes
+app.use('/api/dev/users',)
+
+
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
@@ -47,7 +54,7 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 app.use(bodyParser.json())
 
-app.post(`/create/user`, async (req, res) => {
+app.post(`/users/create`, async (req, res) => {
     const { email, password, photo, created_at, updated_at, deleted_at} = req.body
     const result = await prisma.users.create({
       data: {
@@ -62,7 +69,7 @@ app.post(`/create/user`, async (req, res) => {
     res.json(result)
   })
 
-  app.post(`/create/room`, async (req, res) => {
+  app.post(`/room/create`, async (req, res) => {
     const { room_name, room_capacity, photo, created_at, updated_at, deleted_at} = req.body
     const result = await prisma.users.create({
       data: {
@@ -76,5 +83,3 @@ app.post(`/create/user`, async (req, res) => {
     })
     res.json(result)
   })
-
-  
