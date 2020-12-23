@@ -54,6 +54,12 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 app.use(bodyParser.json())
 
+
+app.get(`/`, async (req, res) => {
+    res.json("Selamat Datang di API rsp-pool by anton, API sedang dalam proses pengerjaan")
+  })
+
+
 app.post(`/users/create`, async (req, res) => {
     const { email, password, photo, created_at, updated_at, deleted_at} = req.body
     const result = await prisma.users.create({
