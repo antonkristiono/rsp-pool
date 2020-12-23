@@ -11,4 +11,4 @@ yarn-error.log*
 *.tsbuildinfo
 .npm
 .eslintcache
-fe/node_modules/
+fe

@@ -11,10 +11,10 @@ dotenv.config({ path: './config/config.env' });
 const app = express();
 
 //routes files
-const users= require('./routes/users');
+// const users= require('./routes/users');
 
 //mount rountes
-app.use('/api/dev/users',)
+// app.use('/api/dev/users',)
 
 
 if (process.env.NODE_ENV === 'development') {
